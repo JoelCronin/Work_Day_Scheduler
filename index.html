@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+  ></script>
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container">
+      <div class="input-group mb-3"> 
+        <div class="hour8 ">08AM</div>
+        <input type="text" class="form-control col-lg-9 future" id="08" value=" " placeholder="9am" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary button-9 saveBtn" type="button" id="button-addon2">💾</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="input-group mb-3"> 
+        <div class="hour9">09AM</div>
+          <input type="text" class="events description col-6" id="09" value="">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary button-9 saveBtn" type="button" id="button-addon2">💾</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="input-group mb-3">
+        <div class="hour10">10AM</div>
+          <input type="text" class="form-control col-lg-9 form" id="10" placeholder="10am" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary button-10 saveBtn" type="button" id="button-addon2">💾</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="input-group mb-3">
+        <div class="hour10">11AM</div>
+        <input type="text" class="form-control col-lg-9 form" id="11" placeholder="11am" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary button-11 saveBtn" type="button" id="button-addon2">💾</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="input-group mb-3"> 12PM
+        <input type="text" class="form-control col-lg-9 form" id="12" placeholder="12pm" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary button-12 saveBtn" type="button" id="button-addon2">💾</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="input-group mb-3"> 1PM
+        <input type="text" class="form-control col-lg-9 form" id="13" placeholder="1pm" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary button-1 saveBtn" type="button" id="button-addon2">💾</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="input-group mb-3"> 2PM
+        <input type="text" class="form-control col-lg-9 form" id="14" placeholder="2pm" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary button-2 saveBtn" type="button" id="button-addon2">💾</button>
+        </div>
+      </div>
+    </div>
+    <div class="container"> 
+      <div class="input-group mb-3"> 3PM
+        <input type="text" class="form-control col-lg-9 form" id="15" placeholder="3pm" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary button-3 saveBtn" type="button" id="button-addon2">💾</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="input-group mb-3 "> 4PM
+        <input type="text" class="form-control col-lg-9 form" id="16" placeholder="4pm" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append"> 
+          <button class="btn btn-outline-secondary button-4 saveBtn" type="button" id="button-addon2">💾</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="input-group mb-3"> 5PM
+        <input type="text" class="form-control col-lg-9 form" id="17" placeholder="5pm" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary button-5 saveBtn" type="button" id="button-addon2">💾</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
+
+<div class="row justify-content-center">
+  <div class="hour col-1 text-center">11AM</div>
+    <input type="text" class="events description col-6" id="11" value="">
+    <button class="col-1 saveBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-check" viewBox="0 0 16 16">
+    <path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+    <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+    </svg>
+    </button>
+</div>
