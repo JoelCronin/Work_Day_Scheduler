@@ -17,6 +17,8 @@ $('input').each(function(){
 })
 
 var checkTime = function () {
+
+    // var now = moment().format("HH")
  
 
 $('input').each(function(){
