@@ -1,8 +1,10 @@
-var today = moment();
-$("#currentDay").text(today.format("dddd MMM Do, YYYY" ));
 
+var accurateTime = $('#clock');
 
-console.log(moment().hour())
+function displayTime() {
+    var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
+    accurateTime.text(rightNow);
+  }
 
 $('.saveBtn').on('click', function () {
     localStorage.setItem($(this).prev().attr("id"), $(this).prev().val());
@@ -45,7 +47,7 @@ $('input').each(function(){
 // });
 
 checkTime();
-renderEvent();
+setInterval(displayTime,1000)
 
     // // apply new class if task is near/over due date
     // if ((moment().isAfter(time)&& moment().isBefore(hourPlus))) {

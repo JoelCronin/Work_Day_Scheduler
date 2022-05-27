@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: rgba(169, 206, 204, 0.568);
 }
 
 textarea {
@@ -72,6 +73,16 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
-.hour10{
+.hour{
  width: 50px;
+ background-color:blanchedalmond;
+ font-weight: 600;
+}
+
+#clock{
+  font-size:xx-large;
+}
+
+h2{
+  font-size: large;
 }
