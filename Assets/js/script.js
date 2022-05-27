@@ -23,6 +23,8 @@ var checkTime = function () {
 //Saves moment time to a single hour digit so that it can be compared against relevant id's which are all numbers
 var now = moment().format("HH")
 console.log("time")
+
+$("input").removeClass("present past future");
  
 //USe .each to iterate through each 'input' class in turn checking its id agaisnt the current time
 $('input').each(function(){
@@ -38,7 +40,8 @@ $('input').each(function(){
 
 checkTime()
 // Use SetInterval so that function will run every minute and colours will change between hours without user needing to refresh page.
-setInterval(checkTime, 60000);
+setInterval(checkTime, 1000);
 
+displayTime()
 //Use set interval so that seconds update every second givng the appearance of a counting clock
 setInterval(displayTime,1000);
