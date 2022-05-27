@@ -1,32 +1,34 @@
-
+//Targets the Date and TIme section on the page
 var accurateTime = $('#clock');
 
+//Uses moment to display accurate time and date to user (down to the second)
 function displayTime() {
     var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
     accurateTime.text(rightNow);
   }
 
+  //Saves any events written in the input form to the local storage when its corresponding save button is pressed.
 $('.saveBtn').on('click', function () {
     localStorage.setItem($(this).prev().attr("id"), $(this).prev().val());
 });
 
-// function renderEvent(){
-//     $(this).val(localStorage.getItem($(this).attr("id")))
-// }
-
+//Retrieves any saved events from local storage making usre they persist even after page is refreshed
 $('input').each(function(){
     $(this).val(localStorage.getItem($(this).attr("id")))
 })
 
+//Function checks each hour block to see if past, present or future and changes background colour to reflect this.
 var checkTime = function () {
 
-    // var now = moment().format("HH")
+//Saves moment time to a single hour digit so that it can be compared against relevant id's which are all numbers
+var now = moment().format("HH")
+console.log("time")
  
-
+//USe .each to iterate through each 'input' class in turn checking its id agaisnt the current time
 $('input').each(function(){
-    if (($(this).attr("id")) > moment().hour()) {
+    if (($(this).attr("id")) > now) {
         $(this).addClass("future")
-    } else if (($(this).attr("id")) < moment().hour()) {
+    } else if (($(this).attr("id")) < now ) {
         $(this).addClass('past')
     } else {
         $(this).addClass('present')
@@ -34,140 +36,9 @@ $('input').each(function(){
 })
 }
 
-//ParseInt if needed
-// $('input').each(function () {
-//     $(this).val(localStorage.getItem($(this).attr("id")))
-//     if (parseInt($(this).attr("id")) > moment().hour()) {
-//         $(this).addClass("future")
-//     } else if (parseInt($(this).attr("id")) < moment().hour()) {
-//         $(this).addClass('past')
-//     } else {
-//         $(this).addClass('present')
-//     }
-// });
+checkTime()
+// Use SetInterval so that function will run every minute and colours will change between hours without user needing to refresh page.
+setInterval(checkTime, 60000);
 
-checkTime();
-setInterval(displayTime,1000)
-
-    // // apply new class if task is near/over due date
-    // if ((moment().isAfter(time)&& moment().isBefore(hourPlus))) {
-    //     $(".form").addClass("past");
-    //     console.log("correct")
-    // } else if (moment().isBefore(time)) {
-    //     $(".form").addClass("future");
-    //     console.log("correct")
-    // } else if (moment().isAfter(time)) {
-    //     $(".form").addClass("present");
-    //     console.log("correct")
-    // }
-
-
-// checkTime();
-
-// if (hour == now) {
-//     $(".form").addClass("present");
-//     console.log("correct")
-// } else if (hour > now) {
-//     $(".form").addClass("future");
-//     console.log("correct")
-// } else if (hour < now) {
-//     $(".form").addClass("present");
-//     console.log("correct")
-// }
-
-// if ($(this).attr("id") > moment().hour()) {
-//     $(this).addClass("future");
-//     console.log("future")
-// } else if ($(this).attr("id") > moment().hour()){
-//     $(this).addClass("past");
-//     console.log("past")
-// } else {
-//     $(this).addClass("present");
-//     console.log("present")
-// }
-
-// THIS WORKS
-// if (hour == now) {
-//     $(".form").addClass("present");
-//     console.log("present")
-// } else if (hour > now) {
-//     $(".form").addClass("future");
-//     console.log("future")
-// } else if (hour < now) {
-//     $(".form").addClass("past");
-//     console.log("past")
-// }
-
-// if ($(this).attr("id") == now) {
-//     $(".form").addClass("present");
-//     console.log("present")
-// } else if ($(this).attr("id") > now) {
-//     $(".form").addClass("future");
-//     console.log("future")
-// } else if ($(this).attr("id") < now) {
-//     $(".form").addClass("past");
-//     console.log("past")
-// }
-
-// $('hour').each(function()){
-//     $(this).attr("id");
-//     if (hour == now) {
-//         $(".form").addClass("present");
-//         console.log("present")
-//     } else if (hour > now) {
-//         $(".form").addClass("future");
-//         console.log("future")
-//     } else if (hour < now) {
-//         $(".form").addClass("past");
-//         console.log("past")
-//     }
-// }
-
-// for(var let i = 8; i = 17; i++ ){
-
-// }
-
-    // var hour = $(".hour").text().trim();
-    // var hourPlus = moment().add(1, "hours").format("HH")
-    // var now = moment().format("HH")
-    // console.log(now)
-    // console.log(hour)
-    // console.log(hourPlus)
-    // var time = moment(hour, "HH");
-    // console.log(time)
-
-    //remove any old classes from element
-    // $(".hour").removeClass("present past future");
-
-    // apply new class if task is near/over due date
-    // apply new class if task is near/over due date
-    // if ((moment().isAfter(time) && moment().isBefore(hourPlus))) {
-    //     $(".form").addClass("past");
-    //     console.log("correct")
-    // } else if (moment().isBefore(time)) {
-    //     $(".form").addClass("future");
-    //     console.log("correct")
-    // } else if (moment().isAfter(time)) {
-    //     $(".form").addClass("present");
-    //     console.log("correct")
-    // }
-
-    // if (parseInt($(this).attr("id")) > moment().hour()) {
-    //     $(this).addClass("future");
-    //     console.log("future")
-    // } else if (parseInt($(this).attr("id") > moment().hour())){
-    //     $(this).addClass("past");
-    //     console.log("past")
-    // } else {
-    //     $(this).addClass("present");
-    //     console.log("present")
-    // }
-// $('input').each(function(){
-//     if (parseInt($(this).attr("id")) > moment().hour()) {
-//         $(this).addClass("future")
-//     } else if (parseInt($(this).attr("id")) < moment().hour()) {
-//         $(this).addClass('past')
-//     } else {
-//         $(this).addClass('present')
-//     }
-// })
+//Use set interval so that seconds update every second givng the appearance of a counting clock
+setInterval(displayTime,1000);
