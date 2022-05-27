@@ -1,4 +1,4 @@
-//Targets the Date and TIme section on the page
+//Targets the Date and Time section on the page
 var accurateTime = $('#clock');
 
 //Uses moment to display accurate time and date to user (down to the second)
@@ -22,8 +22,8 @@ var checkTime = function () {
 
 //Saves moment time to a single hour digit so that it can be compared against relevant id's which are all numbers
 var now = moment().format("HH")
-console.log("time")
 
+//Removes any prior assigned classes 
 $("input").removeClass("present past future");
  
 //USe .each to iterate through each 'input' class in turn checking its id agaisnt the current time
